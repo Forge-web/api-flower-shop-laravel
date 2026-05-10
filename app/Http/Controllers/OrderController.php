@@ -58,7 +58,10 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
 
-        $request->validate($this->validate_rules);
+        $request->validate([
+            "value" => "nullable",
+            "status" => "nullable"
+        ]);
 
         $order->fill($request->except(['id']));
 
