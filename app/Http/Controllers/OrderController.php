@@ -8,11 +8,6 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
 
-    private $validate_rules = [
-        'user_id' => 'required|integer',
-        'flower_id' => 'required|integer',
-        'value' => 'required|integer'
-    ];
     public function index()
     {
         return Order::all();
@@ -47,7 +42,7 @@ class OrderController extends Controller
             
             $order_created[] = Order::create([
                 'user_id' => $request->input('user_id'),
-                'flower_id' => $item['id'],
+                'spare_parts_id' => $item['id'],
                 'value' => $item['quantity'],
             ]);
         }
