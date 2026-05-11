@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            SparePartsTableSeeder::class,
+            FlowersTableSeeder::class,
         ]);
 
         // \App\Models\User::factory(10)->create();

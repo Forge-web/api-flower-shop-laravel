@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\SpareParts;
+use App\Models\Flower;
 
-class SparePartsController extends Controller
+class FlowerController extends Controller
 {
     public function index()
     {
-        return SpareParts::all();
+        return Flower::all();
     }
 
     public function show($id)
     {
-        $spare_parts = SpareParts::findOrFail($id);
-        return response()->json($spare_parts);
+        $flower = Flower::findOrFail($id);
+        return response()->json($flower);
     }
 
     public function store(Request $request)
@@ -25,15 +25,15 @@ class SparePartsController extends Controller
             'price' => 'required|numeric',
         ]);
 
-        $spare_parts = SpareParts::create($request->all());
+        $flower = Flower::create($request->all());
 
-        return response()->json($spare_parts, 201);
+        return response()->json($flower, 201);
     }
 
     public function destroy($id)
     {
-        $spare_parts = SpareParts::findOrFail($id);
-        $spare_parts->delete();
+        $flower = Flower::findOrFail($id);
+        $flower->delete();
 
         return response()->json(null, 204);
     }

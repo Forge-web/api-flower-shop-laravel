@@ -24,12 +24,12 @@ Route::post('login', [\App\Http\Controllers\AuthController::class, 'login']);
 Route::get('login', [\App\Http\Controllers\AuthController::class, 'notAccess'])->name('login');
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::post('spare_parts', [\App\Http\Controllers\SparePartsController::class, 'store']);
-    Route::delete('spare_parts/{id}', [\App\Http\Controllers\SparePartsController::class, 'destroy']);
+    Route::post('flowers', [\App\Http\Controllers\FlowerController::class, 'store']);
+    Route::delete('flowers/{id}', [\App\Http\Controllers\FlowerController::class, 'destroy']);
 });
 
-Route::get('spare_parts/{id}', [\App\Http\Controllers\SparePartsController::class, 'show']);
-Route::get('spare_parts', [\App\Http\Controllers\SparePartsController::class, 'index']);
+Route::get('flowers/{id}', [\App\Http\Controllers\FlowerController::class, 'show']);
+Route::get('flowers', [\App\Http\Controllers\FlowerController::class, 'index']);
 
 
 
